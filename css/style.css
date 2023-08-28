@@ -1,0 +1,806 @@
+*{
+    padding: 0;
+    margin: 0;
+    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+/* start variables */
+:root{
+    --main-color:#0078ff;
+}
+/* end variables */
+/* start components */
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+@media screen and (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+@media screen and (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+.special-head{
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+}
+.special-head h3{
+    font-size: 50px;
+    font-weight: 700;
+}
+.special-head p{
+    font-size: 17px;
+    font-weight: 300;
+}
+.special-head span{
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background-color: var(--main-color);
+}
+
+/* start home */
+.home{
+    background-image: url(../img/intro-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #ddd;
+    position: relative;
+    z-index: 0;
+}
+.home::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    z-index: -1;
+}
+.home .txt h1{
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+.home .txt span{
+    font-size: 30px;
+}
+@media screen and (max-width:1200px) {
+    .home .txt h1{
+        font-size: 50px;
+    }
+    .home .txt span{
+        font-size: 28px;
+    }
+}
+@media screen and (max-width:992px) {
+    .home .txt h1{
+        font-size: 45px;
+    }
+    .home .txt span{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width:768px) {
+    .home .txt h1{
+        font-size: 30px;
+    }
+    .home .txt span{
+        font-size: 20px;
+    }
+}
+.home .txt span::after{
+    content: "";
+    animation: type-name 5s infinite alternate;
+}
+@keyframes type-name{
+    5.5%{
+        content: "|";
+    }
+    15%{
+        content: "Fro|";
+    }
+    22%{
+        content: "Fron|";
+    }
+    30%{
+        content: "Fronte|";
+    }
+    25%{
+        content: "Fronten|";
+    }
+    40%{
+        content: "Frontend|";
+    }
+    45%{
+        content: "Frontend D|";
+    }
+    51%{
+        content: "Frontend De|";
+    }
+    52%{
+        content: "Frontend Dev|";
+    }
+    61%{
+        content: "Frontend Deve|";
+    }
+    69%{
+        content: "Frontend Devel|";
+    }
+    75%{
+        content: "Frontend Develo|";
+    }
+    80%{
+        content: "Frontend Develop|";
+    }
+    90%{
+        content: "Frontend Developer|";
+    }
+    90%{
+        content: "Frontend Developer|";
+    }
+    100%{
+        content: "Frontend Developer|";
+    }
+    
+}
+/* end home */
+/* start nav */
+.nav{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    z-index: 10;
+    padding:25px 10px;
+    background-color: transparent;
+    max-height: 88px;
+}
+.nav .logo h2{
+    font-size: 25px;
+    color: #ddd;
+}
+.nav .main-nav{
+    display: flex;
+    align-items: center;
+}
+.nav .main-nav li{
+    width: fit-content;
+}
+.nav .main-nav li a{
+    padding: 0 10px;
+    width: fit-content;
+    color: #fff;
+    font-size: 17px;
+    position: relative;
+}
+.nav .main-nav li a::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+    width: 0%;
+    height: 2px;
+    background-color: #ddd;
+    transition: all 0.5s;
+}
+.nav .main-nav li .sp::after{
+    width: 60%;
+}
+.nav .main-nav li a:hover::after{
+    width: 60%;
+}
+.nav .small-nav{
+    position: relative;
+    display: none;
+}
+.nav .small-nav i{
+    font-size: 30px;
+}
+.nav .small-nav .second-nav{
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    width: 300px;
+    text-align: center;
+    display: none;
+    transition: all 0.3s;
+}
+.nav .small-nav .second-nav li{
+    background-color: rgb(0 0 0 / 70%);
+    padding: 7px 0;
+    border-bottom: 1px solid rgb(87, 83, 83);
+}
+.nav .small-nav .second-nav li a{
+    color: #fff;
+    transition: 0.3s;
+}
+.nav .small-nav .second-nav li:hover a{
+    color: var(--main-color);
+}
+.nav .small-nav:hover .second-nav{
+    display: block;
+}
+@media screen and (max-width:992px){
+    .nav .main-nav{
+        display: none;
+    }
+    .nav .small-nav{
+        display: block; 
+    }
+}
+/* end nav */
+/* start home */
+.about{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.about .container .all{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+}
+.about .container .all .col{
+    width: 48%;
+    padding: 20px;
+    margin:30px 0;
+}
+.about .container .col .info{
+    width: 100%;
+}
+.about .container .col .info .img{
+    max-width: 100%;
+    max-height: 150px;
+}
+.about .container .col .info .img img{
+    width: 100%;
+    height: 150px;
+}
+.about .container .col .info ul{
+    width: 65%;
+}
+.about .container .col .info ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.about .container .col .info ul li h3{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.about .container .col .info ul li p{
+    margin-bottom: 0;
+    font-size: 17px;
+}
+.about .container .col .range{
+    margin-top: 20px;
+}
+.about .container .col .range h2{
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+.about .container .col .range h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+.about .container .col .range .progress{
+    margin-bottom: 20px;
+}
+.about .container .col-txt h2{
+    position: relative;
+    display: inline-block;
+    margin-bottom: 35px;
+    font-size: 30px;
+}
+.about .container .col-txt h2::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    width: 70%;
+    height: 3px;
+    background-color: var(--main-color);
+}
+.about .container .col-txt p{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 2;
+}
+@media screen and (max-width:992px) {
+    .about .container .all{
+        flex-direction: column;
+    }
+    .about .container .all .col{
+        width: 100%;
+    }
+}
+@media screen and (max-width:768px) {
+    .about .container .col .info{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about .container .col .info .img{
+        width: 100%;
+        text-align: center;
+    }
+    .about .container .col .info .img img{
+        width: 150px;
+    }
+    .about .container .col .info ul{
+        width: 100%;
+        text-align: center;
+    }
+}
+/* end home */
+/* start services */
+.services{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.services .container .icon-container{
+    margin-top: 40px;
+}
+.services .container .icon-container .row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.services .container .icon-container .row1 .col{
+    padding: 0 10px;
+    max-width: 30%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 13px 8px -10px rgb(0 0 0 / 10%);
+    border-radius: 20px;
+}
+.services .container .icon-container .row2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.services .container .icon-container .row2 .col{
+    padding: 0 10px;
+    max-width: 30%;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 13px 8px -10px rgb(0 0 0 / 10%);
+    border-radius: 10px;
+}
+.services .container .icon-container span{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    line-height: 1.55;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 0 0 10px #0078ff;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+.services .container .icon-container i{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.services .container .icon-container .col h3{
+    font-weight: 400;
+    font-size: 25px;
+}
+.services .container .icon-container .col p{
+    margin-top: 20px;
+    line-height: 1.5;
+    font-size: 17px;
+    font-weight: 300;
+}
+.services .container .icon-container .col:hover span{
+    color: white;
+    background-color: var(--main-color);
+    box-shadow: 0 0 0 10px #c1d8f3;
+}
+@media screen and (max-width:992px) {
+    .services .container .icon-container .row1{
+        flex-direction: column;
+    }
+    .services .container .icon-container .row1 .col{
+        min-width: 100%;
+        margin-top: 20px;
+    }
+    .services .container .icon-container .row2{
+        flex-direction: column;
+    }
+    .services .container .icon-container .row2 .col{
+        min-width: 100%;
+        margin-top: 20px;
+    }
+}
+.extra-services{
+    background-image: url(../img/counters-bg.jpg);
+    background-size: cover;
+    margin: 50px 0;
+    padding: 50px 0;
+    position: relative;
+}
+.extra-services::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 119 255 / 50%);
+}
+.extra-services .container .col{
+    padding: 20px;
+    z-index: 1;
+    color: white;
+    width: 25%;
+}
+.extra-services .container .col span{
+    height: 60px;
+    width: 60px;
+    line-height: 1.8;
+    box-shadow: 0 0 0 10px white;
+    font-size: 2rem;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+.extra-services .container .col h4{
+    font-size: 35px;
+}
+.extra-services .container .col p{
+    font-size: 17px;
+}
+@media screen and (max-width:992px) {
+    .extra-services .container{
+        flex-direction: column;
+    }
+    .extra-services .container .col{
+        width: 100%;
+    }
+}
+/* end services */
+/* start portfolio */
+.portfolio{
+    margin: 50px 0;
+}
+.portfolio .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+.portfolio .row .col{
+    padding: 0;
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0 13px 8px -10px rgb(0 0 0 / 10%);
+    overflow: hidden;
+}
+.portfolio .row .col .img{
+    overflow: hidden;
+}
+.portfolio .row .col img{
+    width: 100%;
+    transition: all 0.7s;
+}
+.portfolio .row .col:hover img{
+    transform: scale(1.6);
+}
+.portfolio .row .col .txt{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.portfolio .row .col h2{
+    font-size: 22px;
+    margin-top: 25px;
+}
+.portfolio .row .col p{
+    font-size: 14px;
+}
+.portfolio .row .col span{
+    width: 30px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+}
+.portfolio .row .col i{
+    font-size: 24px;
+    color: var(--main-color);
+    font-weight: 100;
+}
+@media screen and (max-width:992px) {
+    .portfolio .row{
+        flex-direction: column;
+    }
+    .portfolio .row .col{
+        width: 100%;
+    }
+}
+.extra{
+    margin: 50px 0;
+    padding: 40px 0;
+}
+/* start portfolio extraaa */
+.extra{
+    padding: 60px 0;
+    background-image: url(../img/overlay-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: -1;
+}
+.extra::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 120 255/60%);
+    z-index: 0;
+}
+.extra .carousel-item{
+    z-index: 2;
+}
+.extra .test-area{
+    width: 80%;
+    margin: auto;
+    position: relative;
+    overflow-x: hidden;
+    min-height:450px;
+    color: white;
+}
+.extra .test-area .client{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding: 30px 0;
+}
+.extra .test-area .client img{
+    border-radius: 50%;
+}
+.extra .test-area .client h2{
+    font-size: 25px;
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+.extra .test-area .client p{
+    font-size: 18px;
+    line-height: 2;
+    font-weight: 300;
+}
+.extra .test-area .client span{
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+}
+.extra .test-area .client span i{
+    color: var(--main-color);
+    font-size: 35px;
+    margin-top: 8px;
+}
+
+/* end portfolio */
+/* start blog */
+.blog {
+    margin: 50px 0;
+}
+.blog .blog-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+.blog .blog-area .col{
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0 13px 8px -10px rgb(0 0 0 / 10%);
+}
+.blog .blog-area .col .img{
+    width: 100%;
+    position: relative
+}
+.blog .blog-area .col .img::after {
+    content: "TRAVEL";
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: white;
+    background-color: var( --main-color);
+    font-size: 13px;
+    padding: 7px 10px;
+}
+.blog .blog-area .col .img img{
+    max-width: 100%;
+}
+.blog .blog-area .col .txt{
+    margin-top: 30px;
+    padding-left: 20px
+}
+.blog .blog-area .col .txt h2{
+    font-size: 18px;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+.blog .blog-area .col .txt:hover h2{
+    color: var(--main-color);
+}
+.blog .blog-area .col .txt p{
+    font-size: 16px;
+    line-height: 2;
+    margin-top: 15px;
+    color: gray;
+}
+.blog .blog-area .col .last{
+    border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+    background-color: rgba(0,0,0,.03);
+    border-top: 1px solid rgba(0,0,0,.125);
+}
+.blog .blog-area .col .last .small-img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 10px;
+}
+.blog .blog-area .col .last .small-img img{
+    max-width: 100%;
+}
+.blog .blog-area .col .last p{
+    margin: auto;
+    font-size: 15px;
+    transition: all 0.3s;
+}
+.blog .blog-area .col .last:hover p{
+    color: var(--main-color);
+}
+.blog .blog-area .col .last span{
+    font-size: 14px;
+    margin-right: 10px;
+    color: gray;
+}
+@media screen and (max-width:992px) {
+    .blog .blog-area{
+        flex-direction: column;
+    }
+    .blog .blog-area .col{
+        width: 100%;
+    }
+}
+/* end blog */
+/* start contact */
+.contact{
+    margin-top: 50px;
+    background-image: url(../img/overlay-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 50px 0;
+    z-index: 0;
+}
+.contact .over-lay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 120 255/80%);
+    z-index: -1;
+}
+.contact .container{
+    z-index: 1;
+}
+.contact .container .row{
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+}
+.contact .container .col h2{
+    margin-bottom: 35px;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+    display: inline-block;
+}
+.contact .container .col h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 50%;
+    height: 3px;
+    background-color: var(--main-color);
+}
+.contact .container .col .form .bt{
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: white;
+    border: none;
+    background-color: var(--main-color);
+    margin-top: 20px;
+    transition: all 0.4s;
+}
+.contact .container .col .form .bt:hover{
+    background-color: #0454af;
+}
+.contact .container .col .addres p{
+    font-size: 20px;
+    line-height: 1.8;
+    color: gray;
+    font-weight: 300;
+}
+.contact .container .col .addres .add i{
+    color: var(--main-color);
+    margin-right: 12px;
+    font-size: 14px;
+}
+.contact .container .col .addres .add span{
+    font-size: 15px;
+    color: gray;
+}
+.contact .container .col .addres .icons i{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 8px;
+    margin-right: 8px;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+.contact .container .col .addres .icons i:hover{
+    color: white;
+    background-color: var(--main-color);
+    border: none;
+}
+/* end contact */
